@@ -2,18 +2,18 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-async function getProducts() {
-    try {
-        const res = await fetch('http://localhost:3000/products.json');
-        const data = await res.json();
+// async function getProducts() {
+//     try {
+//         const res = await fetch('http://localhost:3000/products.json');
+//         const data = await res.json();
 
-        return data;
-    } catch (error) {
-        if (error instanceof Error) {
-            console.error(error.message);
-        }
-    }
-}
+//         return data;
+//     } catch (error) {
+//         if (error instanceof Error) {
+//             console.error(error.message);
+//         }
+//     }
+// }
 const Products = async ({ params }: { params: { id: string } }) => {
     const item = {
         id: '123',
@@ -43,7 +43,7 @@ const Products = async ({ params }: { params: { id: string } }) => {
             prada: 50000,
         },
     };
-    const products = await getProducts();
+    // const products = await getProducts();
 
     return (
         <div className="flex gap-6 my-6">
