@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": "123",
+            "name": "Mink fur coat",
+            "description": "amazing fur coat",
+            "brands": ["gucci", "prada"],
+            "price": 14555,
+            "sizeOptions": ["L", "M"],
+            "productImages": ["link1", "link2", "link3"],
+            "materialsAndCare": ["Easy to wash", "made with top grade fur", "hand wash only"],
+            "aboutManufacturer": [
+                "EST 1800",
+                "Manufacturer of products of gucci and prada",
+                "Delivers exquisite quality"
+            ],
+            "pricesComparision": [
+                {
+                    "gucci": 30000,
+                    "prada": 50000
+                }
+            ]
+        }
+    ]
+}
