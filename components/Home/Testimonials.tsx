@@ -14,7 +14,7 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                 <div className="grid grid-cols-3 grid-rows-1 gap-x-8">
                     {data.map((item) => {
                         return (
-                            <div className="w-full grid-cols-1">
+                            <div className="w-full grid-cols-1" key={item.testimonial}>
                                 <Avatar>
                                     <AvatarImage src={item.avatarImg} />
                                     <AvatarFallback>CN</AvatarFallback>

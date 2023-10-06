@@ -151,7 +151,7 @@ const Carousel = ({ data }) => {
         <swiper-container ref={swiperRef} init="false">
             {data.map((item) => {
                 return (
-                    <swiper-slide class="blue-slide">
+                    <swiper-slide class="blue-slide" key={item.title}>
                         <div style={{ width: '100%', height: '600px' }} className="flex">
                             <div style={{ width: '80%', height: '600px', position: 'relative' }}>
                                 <Image src={item.productImg} alt="product" fill></Image>

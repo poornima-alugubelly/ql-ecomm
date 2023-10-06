@@ -10,10 +10,11 @@ export const BestSelling = () => {
         <div className="container py-4">
             <h3 className="text-5xl my-3 ] font-qara font-light ">BEST SELLING</h3>
             <div className="grid grid-cols-3 grid-rows-2 gap-y-4 gap-x-16">
-                {[1, 2, 3, 4, 5, 6].map(() => {
+                {[1, 2, 3, 4, 5, 6].map((item) => {
                     return (
                         <div
                             className="flex flex-col  cursor-pointer"
+                            key={item}
                             onClick={() => {
                                 router.push('/product/1');
                             }}

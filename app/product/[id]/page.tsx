@@ -59,11 +59,15 @@ const Products = async ({ params }: { params: { id: string } }) => {
                 <div className="bg-yellow-300">
                     <span>From the makers of</span>
                     {item.brands.map((item) => {
-                        return <span>{item},</span>;
+                        return <span key={item}>{item},</span>;
                     })}
                 </div>
-                {item.sizeOptions.map((item) => {
-                    return <Badge variant="outline">{item}</Badge>;
+                {item.sizeOptions.map((item, index) => {
+                    return (
+                        <Badge variant="outline" key={item + index}>
+                            {item}
+                        </Badge>
+                    );
                 })}
                 <p>₹{item.price}</p>
 
@@ -81,14 +85,14 @@ const Products = async ({ params }: { params: { id: string } }) => {
                 <p>Only 10 pieces left</p>
                 <p>Materials and care</p>
                 <ul>
-                    {item.materialsAndCare.map((point) => {
-                        return <li>{point}</li>;
+                    {item.materialsAndCare.map((point, index) => {
+                        return <li key={index + 'materials'}>{point}</li>;
                     })}
                 </ul>
                 <p>Meet the manufacturer</p>
                 <ul>
-                    {item.aboutManufacturer.map((point) => {
-                        return <li>{point}</li>;
+                    {item.aboutManufacturer.map((point, index) => {
+                        return <li key={index + 'manufacterer'}>{point}</li>;
                     })}
                 </ul>
             </div>
