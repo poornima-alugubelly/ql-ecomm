@@ -96,7 +96,7 @@ const Carousel = ({ data }) => {
             border-radius: 10px;
             position: relative;
             overflow: hidden;
-           background-color: #cbd5e1;
+           background-color: #fff;
            color: #cbd5e1;
             
             &::before {
@@ -107,13 +107,14 @@ const Carousel = ({ data }) => {
                 right: 0;
                 bottom: 0;
                 left: 0;
+                
                 // transition: opacity 200ms;
             }
         }
         
         .swiper-pagination-bullet-active {
 
-            background: rgba(#000, 0.4);
+            background: rgba(#000);
             
             &::before {
                 background-color: #27272a;
@@ -151,7 +152,7 @@ const Carousel = ({ data }) => {
         <swiper-container ref={swiperRef} init="false">
             {data.map((item) => {
                 return (
-                    <swiper-slide class="blue-slide" key={item.title}>
+                    <swiper-slide class="blue-slide" key={item}>
                         <div style={{ width: '100%', height: '600px' }} className="flex">
                             <div style={{ width: '80%', height: '600px', position: 'relative' }}>
                                 <Image src={item.productImg} alt="product" fill></Image>
