@@ -16,8 +16,10 @@
     "clsx": "^2.0.0",
     "lucide-react": "^0.284.0",
     "next": "13.5.4",
+    "razorpay": "^2.9.2",
     "react": "^18",
     "react-dom": "^18",
+    "shortid": "^2.2.16",
     "swiper": "^10.3.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"

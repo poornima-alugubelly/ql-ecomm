@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-
+import { PaymentBtn } from '../../../components/Product/PaymentBtn';
 // async function getProducts() {
 //     try {
 //         const res = await fetch('http://localhost:3000/products.json');
@@ -95,6 +95,7 @@ const Products = async ({ params }: { params: { id: string } }) => {
                         return <li key={index + 'manufacterer'}>{point}</li>;
                     })}
                 </ul>
+                <PaymentBtn />
             </div>
         </div>
     );

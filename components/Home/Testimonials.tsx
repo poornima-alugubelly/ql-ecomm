@@ -4,7 +4,6 @@ import { testimonialType } from './home.types';
 import Image from 'next/image';
 import { ChevronsRight } from 'lucide-react';
 import Link from 'next/link';
-
 interface TestimonialCardProps {
     data: testimonialType[];
 }
