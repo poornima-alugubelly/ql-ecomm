@@ -3,13 +3,14 @@ import { Testimonials } from '@/components/Home/Testimonials';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { homePageDataType } from '@/components/Home/home.types';
+import { Suspense } from 'react';
 export const revalidate = 60;
 /**
  * Swiper components must be dynamically imported with { ssr: false }.
  */
 const Carousel = dynamic(() => import('../components/Home/Carousel'), {
     ssr: false,
-    loading: () => <div>Loading...</div>,
+    loading: () => <div className="h-[600px] w-screen animate-pulse"></div>,
 });
 
 // async function getData() {
@@ -114,7 +115,8 @@ export default async function Page() {
     return (
         <div>
             <Carousel data={data.carousel} />
-            <div className="bg-white">
+
+            <div className="bg-background relative z-10">
                 <Testimonials data={data.testimonials} />
                 <BestSelling />
             </div>

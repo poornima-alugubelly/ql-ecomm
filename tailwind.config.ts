@@ -13,7 +13,7 @@ module.exports = {
             center: true,
             padding: '2rem',
             screens: {
-                lg: '940px',
+                lg: '1024px',
                 xl: '940px',
                 '2xl': '1240px',
             },
@@ -29,11 +29,16 @@ module.exports = {
                 cinzel: ['Cinzel', 'serif'],
                 raleway: ['Raleway', 'sans-serif'],
             },
+            fontSize: {
+                caption: '0.625rem',
+            },
             colors: {
+                primaryBrown: '#383230',
+                borderBrown: '#C4DEB7',
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',
-                background: 'hsl(var(--background))',
+                background: '#F9F7F3',
                 foreground: 'hsl(var(--foreground))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',

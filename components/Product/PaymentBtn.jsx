@@ -1,6 +1,7 @@
 // YourBillingComponent.jsx
 'use client';
 import Script from 'next/script';
+import { Button } from '../ui/button';
 
 export const PaymentBtn = (price) => {
     const makePayment = async () => {
@@ -42,13 +43,13 @@ export const PaymentBtn = (price) => {
         <>
             <Script id="razorpay-checkout-js" src="https://checkout.razorpay.com/v1/checkout.js" />
 
-            <button
+            <Button
                 onClick={() => {
                     makePayment();
                 }}
             >
-                Buy
-            </button>
+                Reserve you piece
+            </Button>
         </>
     );
 };

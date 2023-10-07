@@ -10,6 +10,8 @@ import { register } from 'swiper/element/bundle';
 import { carouselItemType } from './home.types';
 import { Button } from '../ui/button';
 import { createSentenceFromArray } from '@/utils/text.utils';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 register();
 
 // interface CarouselProps {
@@ -68,10 +70,10 @@ const Carousel = ({ data }) => {
 
             watchSlidesProgress: true,
             loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            // },
 
             longSwipes: false,
 
@@ -150,43 +152,59 @@ const Carousel = ({ data }) => {
     }, []);
 
     return (
-        <div className="sticky top-0 left-0 right-0 -z-10">
-            <swiper-container ref={swiperRef} init="false">
-                {data.map((item) => {
-                    return (
-                        <swiper-slide class="blue-slide" key={item}>
-                            <div style={{ width: '100%', height: '600px' }} className="flex">
-                                <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-                                    <Image src={item.productImg} alt="product" fill></Image>
-                                    <div className="w-[30%] h-[70%] absolute top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
-                                        <p className="text-5xl font-qara uppercase">{item.title}</p>
-                                        {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
-                                         */}
-                                        <div>
-                                            <span>From the makers of </span>
-                                            <span className="highlight-text-effect font-qara font-black">
-                                                {createSentenceFromArray(item.brands)}
-                                            </span>
+        <div className="z-0 sticky top-0">
+            <div className="relative">
+                <swiper-container ref={swiperRef} init="false">
+                    {data.map((item) => {
+                        return (
+                            <swiper-slide class="blue-slide" key={item}>
+                                <div style={{ width: '100%', height: '600px' }} className="flex">
+                                    <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+                                        <Image src={item.productImg} alt="product" fill></Image>
+                                        <div className="w-[50%] h-[40%] md:h-[70%] absolute bottom-[10%]  md:top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
+                                            <p className="text-xl md:text-5xl font-qara uppercase">
+                                                {item.title}
+                                            </p>
+                                            {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
+                                             */}
+                                            <div className="text-xs md:text-sm text-center">
+                                                <span>From the makers of </span>
+                                                <span className="sm:highlight-text-effect sm:highlight-text-white font-qara font-black uppercase">
+                                                    {createSentenceFromArray(item.brands)}
+                                                </span>
+                                            </div>
+                                            <ul>
+                                                {item.pricesComparison.map((priceComparison, idx) => (
+                                                    <li key={idx}>
+                                                        {Object.entries(priceComparison).map(
+                                                            ([key, value]) => (
+                                                                <div key={key}>
+                                                                    {key},{value}
+                                                                </div>
+                                                            )
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <Link
+                                                // variant="outline"
+                                                // onClick={() => {
+                                                //     router.push();
+                                                // }}
+                                                className="btn  bg-background hover:bg-primaryBrown hover:text-white
+                                                inline-flex py-1.5 px-3  items-center justify-center  text-sm font-medium ring-offset-background transition-colors"
+                                                href={'/product/1'}
+                                            >
+                                                {item.cta.text}
+                                            </Link>
                                         </div>
-                                        <ul>
-                                            {item.pricesComparison.map((priceComparison, idx) => (
-                                                <li key={idx}>
-                                                    {Object.entries(priceComparison).map(([key, value]) => (
-                                                        <div key={key}>
-                                                            {key},{value}
-                                                        </div>
-                                                    ))}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        <Button variant="outline">{item.cta.text}</Button>
                                     </div>
                                 </div>
-                            </div>
-                        </swiper-slide>
-                    );
-                })}
-            </swiper-container>
+                            </swiper-slide>
+                        );
+                    })}
+                </swiper-container>
+            </div>
         </div>
     );
 };
