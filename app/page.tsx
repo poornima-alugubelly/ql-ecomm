@@ -33,6 +33,7 @@ export default async function Page() {
                     'https://air-prod.imgix.net/df92a94b-864f-4d07-bca5-e5d65b48042f.jpg?w=3840&h=2040&fm=jpg&fit=crop',
                 title: 'luxury scarf',
                 subtitle: 'from the makers of Gucci and Prada',
+                brands: ['gucci', 'prada'],
                 pricesComparison: [
                     {
                         gucci: 30000,
@@ -48,6 +49,7 @@ export default async function Page() {
                 productImg:
                     'https://air-prod.imgix.net/9df4d3a2-5bd3-4421-92b4-72d486cffbef.jpg?w=4267&h=2400&fm=jpg&fit=crop',
                 title: 'luxury scarf',
+                brands: ['gucci', 'prada'],
                 subtitle: 'from the makers of Gucci and Prada',
                 pricesComparison: [
                     {
@@ -65,6 +67,7 @@ export default async function Page() {
                     'https://air-prod.imgix.net/060c3a77-fced-4035-9a1a-8da941ec42e7.jpg?w=3840&h=2040&fm=jpg&fit=crop',
                 title: 'luxury scarf',
                 subtitle: 'from the makers of Gucci and Prada',
+                brands: ['gucci', 'prada'],
                 pricesComparison: [
                     {
                         gucci: 30000,

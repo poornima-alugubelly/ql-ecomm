@@ -75,3 +75,65 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer utilities {
+    .card-shadow {
+        -webkit-box-shadow: 8px 9px 0px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 8px 9px 0px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 8px 9px 0px 1px rgba(0, 0, 0, 0.75);
+    }
+
+    .card-shine-effect {
+        --shine-deg: 45deg;
+        position: relative;
+        overflow: hidden;
+
+        background-repeat: no-repeat;
+        background-position: -100% 0, 0 0;
+
+        background-image: linear-gradient(
+            var(--shine-deg),
+            transparent 20%,
+            transparent 40%,
+            rgba(237, 217, 217, 0.2) 50%,
+            rgba(132, 124, 124, 0.2) 55%,
+            transparent 70%,
+            transparent 80%
+        );
+
+        background-size: 250% 250%, 100% 100%;
+        transition: background-position 0s ease;
+    }
+
+    .card-shine-effect:hover {
+        background-position: 200%0, 0 0;
+        transition-duration: 1.5s;
+    }
+
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .highlight-text-effect {
+        position: relative;
+    }
+
+    .highlight-text-effect::before {
+        /* Highlight color */
+        background-color: #fff;
+
+        content: '';
+        position: absolute;
+        width: calc(100% + 4px);
+        height: 80%;
+        left: -2px;
+        bottom: 0;
+        z-index: -1;
+        transform: rotate(-2deg);
+    }
+}

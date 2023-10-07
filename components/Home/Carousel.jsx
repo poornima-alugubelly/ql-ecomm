@@ -9,6 +9,7 @@ import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { carouselItemType } from './home.types';
 import { Button } from '../ui/button';
+import { createSentenceFromArray } from '@/utils/text.utils';
 register();
 
 // interface CarouselProps {
@@ -154,24 +155,31 @@ const Carousel = ({ data }) => {
                 return (
                     <swiper-slide class="blue-slide" key={item}>
                         <div style={{ width: '100%', height: '600px' }} className="flex">
-                            <div style={{ width: '80%', height: '600px', position: 'relative' }}>
+                            <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                                 <Image src={item.productImg} alt="product" fill></Image>
-                            </div>
-                            <div className="w-[20%] h-full bg-slate-500 flex flex-col items-center justify-center">
-                                <p className="text-3xl">{item.title}</p>
-                                <p className="text-2xl">{item.subtitle}</p>
-                                <ul>
-                                    {item.pricesComparison.map((priceComparison, idx) => (
-                                        <li key={idx}>
-                                            {Object.entries(priceComparison).map(([key, value]) => (
-                                                <div key={key}>
-                                                    {key},{value}
-                                                </div>
-                                            ))}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <Button variant="outline">{item.cta.text}</Button>
+                                <div className="w-[30%] h-[70%] absolute top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
+                                    <p className="text-5xl font-qara uppercase">{item.title}</p>
+                                    {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
+                                     */}
+                                    <div>
+                                        <span>From the makers of </span>
+                                        <span className="highlight-text-effect font-qara font-black">
+                                            {createSentenceFromArray(item.brands)}
+                                        </span>
+                                    </div>
+                                    <ul>
+                                        {item.pricesComparison.map((priceComparison, idx) => (
+                                            <li key={idx}>
+                                                {Object.entries(priceComparison).map(([key, value]) => (
+                                                    <div key={key}>
+                                                        {key},{value}
+                                                    </div>
+                                                ))}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Button variant="outline">{item.cta.text}</Button>
+                                </div>
                             </div>
                         </div>
                     </swiper-slide>

@@ -17,8 +17,12 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                 <div className="grid grid-cols-3 grid-rows-1 gap-x-8">
                     {data.map((item) => {
                         return (
-                            <Link className="flex h-auto items-center group" href={'/product/1'}>
-                                <div className="bg-gray-300 text-zinc-700 h-[130px] w-[300px] grow-0 text-xs rounded-l-sm p-4 shadow-md font-light">
+                            <Link
+                                className="flex h-auto items-center group"
+                                href={'/product/1'}
+                                key={item.testimonial}
+                            >
+                                <div className="bg-gray-300 text-zinc-700 h-[130px] w-[300px] grow-0 text-xs p-4 shadow-lg font-light">
                                     {item.testimonial}
                                 </div>
                                 <div style={{ width: '150px', height: '150px', position: 'relative' }}>
@@ -26,18 +30,18 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                                         src={item.avatarImg}
                                         alt="avatar"
                                         fill
-                                        className="rounded-lg"
+                                        // className="rounded-lg"
                                     ></Image>
                                     <Button
                                         variant="outline"
-                                        className="absolute bottom-[10%] left-[85%] rounded-full h-10 w-10 py-0 px-0 group-hover:h-10 group-hover:w-28 group-hover:px-4 group-hover:py-2"
+                                        className="absolute bottom-[10%] left-[85%] rounded-full h-10 w-10 py-0 px-0 group-hover:h-10 group-hover:w-28 group-hover:px-3 group-hover:py-2"
                                         style={{ transition: 'width 350ms ease-in-out' }}
                                     >
                                         <p
                                             className="w-0 group-hover:w-auto overflow-hidden"
                                             style={{ transition: 'width 350ms ease-in-out' }}
                                         >
-                                            checkout item
+                                            Explore
                                         </p>
                                         <ChevronsRight />
                                     </Button>
