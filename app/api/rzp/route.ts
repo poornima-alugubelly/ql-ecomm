@@ -1,7 +1,7 @@
 const Razorpay = require('razorpay');
 const shortid = require('shortid');
 
-export async function POST(req: Response, res: Request) {
+export async function POST(req: Request) {
     const razorpay = new Razorpay({
         key_id: process.env.RZP_KEY,
         key_secret: process.env.RZP_SECRET,
