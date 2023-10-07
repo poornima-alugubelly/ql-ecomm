@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { PaymentBtn } from '../../../components/Product/PaymentBtn';
 import { createSentenceFromArray } from '@/utils/text.utils';
 import { useState } from 'react';
+import { getRandomNumber } from '@/utils/numbers.utils';
 // async function getProducts() {
 //     try {
 //         const res = await fetch('http://localhost:3000/products.json');
@@ -104,7 +105,7 @@ const Products = ({ params }: { params: { id: string } }) => {
                     </ul>
                     <PaymentBtn price={item.price} />
                     <p className="bg-gray-400 text-white text-xs w-fit p-1 rounded-md">
-                        Only 10 pieces left!
+                        Only {getRandomNumber({ max: 35, min: 15 })} pieces left!
                     </p>
                     <p className="text-xl text-gray-600">Meet the manufacturer</p>
                     <ul className="text-sm">

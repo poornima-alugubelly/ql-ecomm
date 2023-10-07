@@ -70,10 +70,10 @@ const Carousel = ({ data }) => {
 
             watchSlidesProgress: true,
             loop: true,
-            // autoplay: {
-            //     delay: 5000,
-            //     disableOnInteraction: false,
-            // },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
 
             longSwipes: false,
 
@@ -161,7 +161,7 @@ const Carousel = ({ data }) => {
                                 <div style={{ width: '100%', height: '600px' }} className="flex">
                                     <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                                         <Image src={item.productImg} alt="product" fill></Image>
-                                        <div className="w-[50%] h-[40%] md:h-[70%] absolute bottom-[10%]  md:top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
+                                        <div className="w-[50%] md:w-[30%] h-[40%] md:h-[70%] absolute bottom-[10%]  md:top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
                                             <p className="text-xl md:text-5xl font-qara uppercase">
                                                 {item.title}
                                             </p>
@@ -191,8 +191,8 @@ const Carousel = ({ data }) => {
                                                 // onClick={() => {
                                                 //     router.push();
                                                 // }}
-                                                className="btn  bg-background hover:bg-primaryBrown hover:text-white
-                                                inline-flex py-1.5 px-3  items-center justify-center  text-sm font-medium ring-offset-background transition-colors"
+                                                className=" btn  bg-background hover:bg-primaryBrown hover:text-white
+                                                inline-flex py-1.5 px-3  items-center justify-center text-md font-normal ring-offset-background transition-colors"
                                                 href={'/product/1'}
                                             >
                                                 {item.cta.text}
