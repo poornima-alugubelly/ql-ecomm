@@ -95,7 +95,7 @@ const Products = async ({ params }: { params: { id: string } }) => {
                         return <li key={index + 'manufacterer'}>{point}</li>;
                     })}
                 </ul>
-                <PaymentBtn />
+                <PaymentBtn price={item.price} />
             </div>
         </div>
     );

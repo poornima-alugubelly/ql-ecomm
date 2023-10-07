@@ -1,35 +1,41 @@
 // YourBillingComponent.jsx
 'use client';
-import { rzpHandlerFunc } from '@/utils/razorpay.utils';
 import Script from 'next/script';
 
-export const PaymentBtn = () => {
-    const makePayment = async ({ productId = null }) => {
-        const data = await fetch('/api/rzp', {
-            method: 'POST',
+export const PaymentBtn = (price) => {
+    const makePayment = async () => {
+        try {
+            const data = await fetch('/api/rzp', {
+                method: 'POST',
+                body: JSON.stringify(price),
+            }).then((t) => t.json());
+            console.log('data', data);
+            const options = {
+                currency: 'INR',
+                amount: data.amount,
+                name: 'Origins',
+                description: 'Luxury Products',
+                order_id: data.id,
+                handler: function (response) {
+                    // Validate payment at server - using webhooks is a better idea.
+                    // alert(response.razorpay_payment_id);
+                    // alert(response.razorpay_order_id);
+                    // alert(response.razorpay_signature);
+                    // TODO:toast
+                    console.log('success');
+                },
+            };
 
-            body: JSON.stringify({ productId }),
-        }).then((t) => t.json());
-        console.log('data', data);
-        const options = {
-            currency: 'INR',
-            amount: data.amount,
-            order_id: data.id,
-            handler: function (response) {
-                // Validate payment at server - using webhooks is a better idea.
-                // alert(response.razorpay_payment_id);
-                // alert(response.razorpay_order_id);
-                // alert(response.razorpay_signature);
-                console.log('success');
-            },
-        };
+            const paymentObject = new window.Razorpay(options);
+            paymentObject.open();
 
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
-
-        paymentObject.on('payment.failed', function (response) {
-            alert('Payment failed. Please try again. Contact support for help');
-        });
+            paymentObject.on('payment.failed', function (response) {
+                alert('Payment failed. Please try again. Contact support for help');
+            });
+        } catch {
+            // TODO:toast
+            console.log('error');
+        }
     };
 
     return (
@@ -38,7 +44,7 @@ export const PaymentBtn = () => {
 
             <button
                 onClick={() => {
-                    makePayment({ productId: 'example_ebook' });
+                    makePayment();
                 }}
             >
                 Buy
