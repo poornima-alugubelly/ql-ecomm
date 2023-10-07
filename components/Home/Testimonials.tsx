@@ -22,7 +22,7 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                                 href={'/product/1'}
                                 key={item.testimonial}
                             >
-                                <div className="bg-gray-300 text-zinc-700 h-[130px] w-[300px] grow-0 text-xs p-4 shadow-lg font-light">
+                                <div className="bg-gray-300 text-zinc-700 h-[130px] w-[300px] grow-0 text-xs p-4 shadow-lg font-light rounded-l-md">
                                     {item.testimonial}
                                 </div>
                                 <div style={{ width: '150px', height: '150px', position: 'relative' }}>
@@ -30,7 +30,7 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                                         src={item.avatarImg}
                                         alt="avatar"
                                         fill
-                                        // className="rounded-lg"
+                                        className="rounded-lg"
                                     ></Image>
                                     <Button
                                         variant="outline"

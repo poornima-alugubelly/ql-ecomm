@@ -114,8 +114,10 @@ export default async function Page() {
     return (
         <div>
             <Carousel data={data.carousel} />
-            <Testimonials data={data.testimonials} />
-            <BestSelling />
+            <div className="bg-white">
+                <Testimonials data={data.testimonials} />
+                <BestSelling />
+            </div>
         </div>
     );
 }
