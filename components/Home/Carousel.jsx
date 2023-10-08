@@ -156,24 +156,43 @@ const Carousel = ({ data }) => {
             <div className="relative">
                 <swiper-container ref={swiperRef} init="false">
                     {data.map((item) => {
+                        const brands = Object.keys(item.pricesComparison);
+                        console.log(brands);
                         return (
                             <swiper-slide class="blue-slide" key={item}>
                                 <div style={{ width: '100%', height: '600px' }} className="flex">
                                     <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                                         <Image src={item.productImg} alt="product" fill></Image>
-                                        <div className="w-[50%] md:w-[30%] h-[40%] md:h-[70%] absolute bottom-[10%]  md:top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
-                                            <p className="text-xl md:text-5xl font-qara uppercase">
+                                        <div className="p-2 w-[50%] md:w-[30%] h-[40%] md:h-[70%] absolute bottom-[10%]  md:top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
+                                            <p className="text-xl md:text-3xl font-qara uppercase text-center">
                                                 {item.title}
                                             </p>
                                             {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
                                              */}
-                                            <div className="text-xs md:text-sm text-center">
-                                                <span>From the makers of </span>
-                                                <span className="sm:highlight-text-effect sm:highlight-text-white font-qara font-black uppercase">
-                                                    {createSentenceFromArray(item.brands)}
+                                            <div className="text-xs md: text-center mt-2 font-thin px-2 opacity-80">
+                                                <span className="text-xs">From the makers of </span>
+                                                <span className="font-bold  uppercase flex gap-2 text-center mx-auto">
+                                                    {/* {createSentenceFromArray(item.brands)}
+                                                     */}
+                                                    {brands.map((brand, index) => (
+                                                        <div
+                                                            className="flex items-center"
+                                                            key={brand + 'carousel'}
+                                                        >
+                                                            <p className="text-xl font-[800]">{brand}</p>
+                                                            {index !== brands.length - 1 && (
+                                                                <p className="text-xs ml-2"> •</p>
+                                                            )}
+                                                        </div>
+                                                    ))}
                                                 </span>
                                             </div>
-                                            <ul>
+                                            <div className="hidden md:grid rounded-full bg-primaryBrown opacity-75 my-2 text-white w-32 h-32 place-content-center text-center">
+                                                <p className="text-sm md:text-base">Only for ₹30000</p>
+                                                <p className="text-caption md:text-xs">GUCCI - ₹45000 </p>
+                                                <p className="text-caption md:text-xs">PRADA - ₹55000 </p>
+                                            </div>
+                                            {/* <ul>
                                                 {item.pricesComparison.map((priceComparison, idx) => (
                                                     <li key={idx}>
                                                         {Object.entries(priceComparison).map(
@@ -185,14 +204,14 @@ const Carousel = ({ data }) => {
                                                         )}
                                                     </li>
                                                 ))}
-                                            </ul>
+                                            </ul> */}
                                             <Link
                                                 // variant="outline"
                                                 // onClick={() => {
                                                 //     router.push();
                                                 // }}
                                                 className=" btn  bg-background hover:bg-primaryBrown hover:text-white
-                                                inline-flex py-1.5 px-3  items-center justify-center text-md font-normal ring-offset-background transition-colors"
+                                                inline-flex py-1.5 px-3  items-center justify-center text-base md:text-lg mt-2 font-normal ring-offset-background transition-colors"
                                                 href={'/product/1'}
                                             >
                                                 {item.cta.text}

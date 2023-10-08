@@ -32,15 +32,13 @@ export default async function Page() {
             {
                 productImg:
                     'https://air-prod.imgix.net/df92a94b-864f-4d07-bca5-e5d65b48042f.jpg?w=3840&h=2040&fm=jpg&fit=crop',
-                title: 'luxury scarf',
+                title: 'Misha Cashmere Duster Robe Cardigan',
                 subtitle: 'from the makers of Gucci and Prada',
-                brands: ['gucci', 'prada'],
-                pricesComparison: [
-                    {
-                        gucci: 30000,
-                        prada: 50000,
-                    },
-                ],
+                pricesComparison: {
+                    gucci: 30000,
+                    prada: 50000,
+                },
+
                 cta: {
                     text: 'Shop Now',
                     link: 'link',
@@ -52,12 +50,11 @@ export default async function Page() {
                 title: 'luxury scarf',
                 brands: ['gucci', 'prada'],
                 subtitle: 'from the makers of Gucci and Prada',
-                pricesComparison: [
-                    {
-                        gucci: 30000,
-                        prada: 50000,
-                    },
-                ],
+                pricesComparison: {
+                    gucci: 30000,
+                    prada: 50000,
+                },
+
                 cta: {
                     text: 'Shop Now',
                     link: 'link',
@@ -69,12 +66,11 @@ export default async function Page() {
                 title: 'luxury scarf',
                 subtitle: 'from the makers of Gucci and Prada',
                 brands: ['gucci', 'prada'],
-                pricesComparison: [
-                    {
-                        gucci: 30000,
-                        prada: 50000,
-                    },
-                ],
+                pricesComparison: {
+                    gucci: 30000,
+                    prada: 50000,
+                },
+
                 cta: {
                     text: 'Shop Now',
                     link: 'link',

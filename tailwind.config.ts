@@ -35,6 +35,7 @@ module.exports = {
             colors: {
                 primaryBrown: '#383230',
                 borderBrown: '#C4DEB7',
+                gray55: '#8c8c8c8c',
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',

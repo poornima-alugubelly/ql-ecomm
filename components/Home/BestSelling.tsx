@@ -31,8 +31,8 @@ export const BestSelling = () => {
                             </div>
                             <div className="p-4 border border-zinc-500">
                                 <p className="text-xl font-qara font-semibold">Mink Coat</p>
-                                <p className="text-xs text-gray-500">Same manufacturer as</p>
-                                <div className="flex items-center gap-1 uppercase">
+                                <p className="text-xs text-gray-500 py-1.5">Same manufacturer as</p>
+                                <div className="flex items-center gap-1 uppercase font-bold">
                                     {brands.map((item, index) => (
                                         <>
                                             <p className="text-xs">{item}</p>
@@ -40,7 +40,7 @@ export const BestSelling = () => {
                                         </>
                                     ))}
                                 </div>
-                                <p className="text-semibold">₹3000</p>
+                                <p className="font-bold mt-2.5">₹3000</p>
                             </div>
                         </Link>
                     );

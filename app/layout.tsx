@@ -34,14 +34,25 @@ const alore = localFont({
     ],
     variable: '--font-alore',
 });
-
 const sfPro = localFont({
     src: [
         {
             path: '../public/fonts/sf-pro-text-regular.ttf',
-            weight: '400',
+        },
+        {
+            path: '../public/fonts/sf-pro-text-medium.ttf',
+        },
+        {
+            path: '../public/fonts/sf-pro-text-light.ttf',
+        },
+        {
+            path: '../public/fonts/sf-Pro-Display-Thin.ttf',
+        },
+        {
+            path: '../public/fonts/sf-Pro-Display-Light.ttf',
         },
     ],
+
     variable: '--font-sfpro',
 });
 export const metadata: Metadata = {
