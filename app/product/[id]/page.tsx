@@ -139,10 +139,10 @@ const Products = ({ params }: { params: { id: string } }) => {
                                         <td className="p-2 border"> {brand}</td>
                                         <td className="p-2 border">₹{formatNumber(price)}</td>
                                         <td className="p-2 border ">
-                                            {brand === 'ourBrand' ? (
+                                            {brand === BRAND_NAME ? (
                                                 <CheckCircle className="mx-auto" />
                                             ) : (
-                                                `${calculateSavingsPercentage(price).toFixed(2)}%`
+                                                `${Math.ceil(calculateSavingsPercentage(price))}%`
                                             )}
                                         </td>
                                     </tr>

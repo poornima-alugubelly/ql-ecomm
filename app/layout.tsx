@@ -15,39 +15,6 @@ const qara = localFont({
 
 const sfPro = localFont({
     src: [
-        // {
-        //     path: '../public/fonts/sf-pro-text-regular.ttf',
-        //     weight: '900',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-regular.ttf',
-        //     weight: '500',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-regular.ttf',
-        //     weight: '600',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-regular.ttf',
-        //     weight: '700',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-regular.ttf',
-        //     weight: '800',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-regular.ttf',
-        //     weight: '900',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-medium.ttf',
-        // },
-        // {
-        //     path: '../public/fonts/sf-pro-text-light.ttf',
-        // },
-        // {
-        //     path: '../public/fonts/sf-Pro-Display-Thin.ttf',
-        // },
         {
             path: '../public/fonts/sf-Pro-Display-Light.ttf',
         },
