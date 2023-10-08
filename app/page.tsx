@@ -4,7 +4,9 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { homePageDataType } from '@/components/Home/home.types';
 import { Suspense } from 'react';
+import { Quote } from 'lucide-react';
 export const revalidate = 60;
+
 /**
  * Swiper components must be dynamically imported with { ssr: false }.
  */

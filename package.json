@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.5.4",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
@@ -19,6 +18,7 @@
     "razorpay": "^2.9.2",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.32.6",
     "shortid": "^2.2.16",
     "swiper": "^10.3.1",
     "tailwind-merge": "^1.14.0",

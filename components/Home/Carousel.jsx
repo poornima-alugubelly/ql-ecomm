@@ -70,10 +70,10 @@ const Carousel = ({ data }) => {
 
             watchSlidesProgress: true,
             loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            // },
 
             longSwipes: false,
 
@@ -179,7 +179,7 @@ const Carousel = ({ data }) => {
                                                             className="flex items-center"
                                                             key={brand + 'carousel'}
                                                         >
-                                                            <p className="text-xl font-[800]">{brand}</p>
+                                                            <p className="text-xl font-black ">{brand}</p>
                                                             {index !== brands.length - 1 && (
                                                                 <p className="text-xs ml-2"> •</p>
                                                             )}
@@ -187,10 +187,16 @@ const Carousel = ({ data }) => {
                                                     ))}
                                                 </span>
                                             </div>
-                                            <div className="hidden md:grid rounded-full bg-primaryBrown opacity-75 my-2 text-white w-32 h-32 place-content-center text-center">
-                                                <p className="text-sm md:text-base">Only for ₹30000</p>
-                                                <p className="text-caption md:text-xs">GUCCI - ₹45000 </p>
-                                                <p className="text-caption md:text-xs">PRADA - ₹55000 </p>
+                                            <div className="hidden md:grid  bg-primaryBrown opacity-75  my-2 text-white w-28 h-28 border rounded-full place-content-center text-center">
+                                                <p className="text-sm md:text-xs font-bold">
+                                                    Only for ₹30000
+                                                </p>
+                                                <p className="text-caption md:text-caption">
+                                                    GUCCI - ₹45000{' '}
+                                                </p>
+                                                <p className="text-caption md:text-caption">
+                                                    PRADA - ₹55000{' '}
+                                                </p>
                                             </div>
                                             {/* <ul>
                                                 {item.pricesComparison.map((priceComparison, idx) => (

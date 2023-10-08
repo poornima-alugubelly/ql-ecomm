@@ -20,10 +20,7 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                alice: ['Alice', 'serif'],
-                lavish: ['var(--font-lavish)'],
                 sfpro: ['var(--font-sfpro)'],
-                alore: ['var(--font-alore)'],
                 qara: ['var(--font-qara)'],
                 sacramento: ['Sacramento', 'cursive'],
                 cinzel: ['Cinzel', 'serif'],
