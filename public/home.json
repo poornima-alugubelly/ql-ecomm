@@ -12,7 +12,7 @@
                 }
             ],
             "cta": {
-                "text": "Shop Now",
+                "text": "Get now",
                 "link": "link"
             }
         },
@@ -28,7 +28,7 @@
                 }
             ],
             "cta": {
-                "text": "Shop Now",
+                "text": "Get now",
                 "link": "link"
             }
         },
@@ -44,7 +44,7 @@
                 }
             ],
             "cta": {
-                "text": "Shop Now",
+                "text": "Get now",
                 "link": "link"
             }
         }
@@ -54,7 +54,7 @@
             "avatarImg": "https://i.pravatar.cc/300",
             "testimonial": "Their commitment to quality and innovation sets them apart, making them a symbol of prestige and sophistication in the world of luxury fashion and lifestyle.",
             "cta": {
-                "text": "Shop Now",
+                "text": "Get now",
                 "link": "link"
             }
         },
@@ -62,7 +62,7 @@
             "avatarImg": "https://i.pravatar.cc/300",
             "testimonial": "With exquisite attention to detail, they consistently deliver opulent creations that redefine luxury.",
             "cta": {
-                "text": "Shop Now",
+                "text": "Get now",
                 "link": "link"
             }
         },
@@ -70,7 +70,7 @@
             "avatarImg": "https://i.pravatar.cc/300",
             "testimonial": "This prestigious luxury brand epitomizes timeless elegance and unparalleled craftsmanship.",
             "cta": {
-                "text": "Shop Now",
+                "text": "Get now",
                 "link": "link"
             }
         }

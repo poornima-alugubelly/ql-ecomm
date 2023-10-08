@@ -163,14 +163,16 @@ const Carousel = ({ data }) => {
                                 <div style={{ width: '100%', height: '600px' }} className="flex">
                                     <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                                         <Image src={item.productImg} alt="product" fill></Image>
-                                        <div className="p-2 w-[50%] md:w-[30%] h-[40%] md:h-[70%] absolute bottom-[10%]  md:top-[10%] right-[5%] flex flex-col items-center justify-center glass-effect">
-                                            <p className="text-xl md:text-3xl font-qara uppercase text-center">
+                                        <div className="px-2.5 md:px-8 max-w-[50%] md:max-w-[30%]   absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 right-[10%] flex flex-col items-center justify-center glass-effect">
+                                            <p className="text-lg md:text-3xl font-qara uppercase text-center">
                                                 {item.title}
                                             </p>
                                             {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
                                              */}
-                                            <div className="text-xs md: text-center mt-2 font-thin px-2 opacity-80">
-                                                <span className="text-xs">From the makers of </span>
+                                            <div className="text-xs  text-center mt-2 font-thin px-2 opacity-80">
+                                                <span className="text-caption md:text-xs">
+                                                    From the makers of{' '}
+                                                </span>
                                                 <span className="font-bold  uppercase flex gap-2 text-center mx-auto">
                                                     {/* {createSentenceFromArray(item.brands)}
                                                      */}
@@ -179,7 +181,9 @@ const Carousel = ({ data }) => {
                                                             className="flex items-center"
                                                             key={brand + 'carousel'}
                                                         >
-                                                            <p className="text-xl font-black ">{brand}</p>
+                                                            <p className="text-base md:text-base font-black ">
+                                                                {brand}
+                                                            </p>
                                                             {index !== brands.length - 1 && (
                                                                 <p className="text-xs ml-2"> •</p>
                                                             )}
@@ -187,35 +191,8 @@ const Carousel = ({ data }) => {
                                                     ))}
                                                 </span>
                                             </div>
-                                            <div className="hidden md:grid  bg-primaryBrown opacity-75  my-2 text-white w-28 h-28 border rounded-full place-content-center text-center">
-                                                <p className="text-sm md:text-xs font-bold">
-                                                    Only for ₹30000
-                                                </p>
-                                                <p className="text-caption md:text-caption">
-                                                    GUCCI - ₹45000{' '}
-                                                </p>
-                                                <p className="text-caption md:text-caption">
-                                                    PRADA - ₹55000{' '}
-                                                </p>
-                                            </div>
-                                            {/* <ul>
-                                                {item.pricesComparison.map((priceComparison, idx) => (
-                                                    <li key={idx}>
-                                                        {Object.entries(priceComparison).map(
-                                                            ([key, value]) => (
-                                                                <div key={key}>
-                                                                    {key},{value}
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </li>
-                                                ))}
-                                            </ul> */}
+
                                             <Link
-                                                // variant="outline"
-                                                // onClick={() => {
-                                                //     router.push();
-                                                // }}
                                                 className=" btn  bg-background hover:bg-primaryBrown hover:text-white
                                                 inline-flex py-1.5 px-3  items-center justify-center text-base md:text-lg mt-2 font-normal ring-offset-background transition-colors"
                                                 href={'/product/1'}

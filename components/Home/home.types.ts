@@ -19,6 +19,7 @@ export type testimonialType = {
     avatarImg: string;
     testimonial: string;
     cta: ctaType;
+    author: string;
 };
 
 export type bestSellingItemType = {

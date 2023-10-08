@@ -90,11 +90,11 @@ const Products = ({ params }: { params: { id: string } }) => {
             <div>
                 <div className="w-full md:w-[360px] bg-white">
                     <div className="border border-t-0 border-l-0 border-r-0 p-6">
-                        <p className="text-5xl font-qara font-bold">{item.name}</p>
+                        <p className="text-5xl font-qara font-bold mb-3">{item.name}</p>
 
                         <div>
                             <span>From the makers of </span>
-                            <div className="uppercase font-bold font-qara font-white px-2 btn w-fit mt-1">
+                            <div className="uppercase font-bold font-qara font-white px-2 btn w-fit mt-2">
                                 {createSentenceFromArray(brands.slice(1))}
                             </div>
                         </div>

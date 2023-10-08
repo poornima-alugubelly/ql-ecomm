@@ -48,7 +48,7 @@ export const PaymentBtn = (price) => {
                     makePayment();
                 }}
             >
-                Reserve you piece
+                Reserve your piece
             </Button>
         </>
     );

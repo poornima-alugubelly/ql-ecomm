@@ -42,8 +42,8 @@ export default async function Page() {
                 },
 
                 cta: {
-                    text: 'Shop Now',
-                    link: 'link',
+                    text: 'Get now',
+                    link: '1',
                 },
             },
             {
@@ -58,8 +58,8 @@ export default async function Page() {
                 },
 
                 cta: {
-                    text: 'Shop Now',
-                    link: 'link',
+                    text: 'Get now',
+                    link: '1',
                 },
             },
             {
@@ -74,8 +74,8 @@ export default async function Page() {
                 },
 
                 cta: {
-                    text: 'Shop Now',
-                    link: 'link',
+                    text: 'Get now',
+                    link: '1',
                 },
             },
         ],
@@ -85,27 +85,30 @@ export default async function Page() {
                 testimonial:
                     'Their commitment to quality and innovation sets them apart, making them a symbol of prestige and sophistication in the world of luxury fashion and lifestyle.',
                 cta: {
-                    text: 'Shop Now',
-                    link: 'link',
+                    text: 'Get now',
+                    link: '1',
                 },
+                author: 'Joe smith',
             },
             {
                 avatarImg: 'https://i.pravatar.cc/300',
                 testimonial:
                     'With exquisite attention to detail, they consistently deliver opulent creations that redefine luxury.',
                 cta: {
-                    text: 'Shop Now',
-                    link: 'link',
+                    text: 'Get now',
+                    link: '`',
                 },
+                author: 'Joanna smith',
             },
             {
                 avatarImg: 'https://i.pravatar.cc/300',
                 testimonial:
                     'This prestigious luxury brand epitomizes timeless elegance and unparalleled craftsmanship.',
                 cta: {
-                    text: 'Shop Now',
-                    link: 'link',
+                    text: 'Get now',
+                    link: '1',
                 },
+                author: 'David gray',
             },
         ],
     };
