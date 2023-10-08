@@ -13,7 +13,7 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
         <section className="mt-8">
             <div className="container py-4">
                 <h3 className="text-3xl md:text-4xl mt-8 mb-6 font-qara uppercase">Testimonials</h3>
-                <div className="grid md:grid-cols-3 auto-cols-auto gap-8">
+                <div className="grid md:grid-cols-3 auto-cols-auto  gap-6 md:gap-16">
                     {data.map((item) => {
                         return (
                             <Link
