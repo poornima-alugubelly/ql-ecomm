@@ -157,13 +157,12 @@ const Carousel = ({ data }) => {
                 <swiper-container ref={swiperRef} init="false">
                     {data.map((item) => {
                         const brands = Object.keys(item.pricesComparison);
-                        console.log(brands);
                         return (
                             <swiper-slide class="blue-slide" key={item}>
                                 <div style={{ width: '100%', height: '600px' }} className="flex">
                                     <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                                         <Image src={item.productImg} alt="product" fill></Image>
-                                        <div className="px-2.5 md:px-8 max-w-[50%] md:max-w-[30%]   absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 right-[10%] flex flex-col items-center justify-center glass-effect">
+                                        <div className="px-2.5 md:px-8 max-w-[50%] md:max-w-[30%]   absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 left-[10%] flex flex-col items-center justify-center glass-effect">
                                             <p className="text-lg md:text-3xl font-qara uppercase text-center">
                                                 {item.title}
                                             </p>

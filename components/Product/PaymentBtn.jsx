@@ -2,13 +2,14 @@
 'use client';
 import Script from 'next/script';
 import { Button } from '../ui/button';
+import { formatNumber } from '@/utils/numbers.utils';
 
-export const PaymentBtn = (price) => {
+export const PaymentBtn = ({ price }) => {
     const makePayment = async () => {
         try {
             const data = await fetch('/api/rzp', {
                 method: 'POST',
-                body: JSON.stringify(price),
+                body: JSON.stringify({ price }),
             }).then((t) => t.json());
             console.log('data', data);
             const options = {
@@ -42,13 +43,31 @@ export const PaymentBtn = (price) => {
     return (
         <>
             <Script id="razorpay-checkout-js" src="https://checkout.razorpay.com/v1/checkout.js" />
-
+            <p className="text-xs flex gap-1 items-center">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-info"
+                >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4" />
+                    <path d="M12 8h.01" />
+                </svg>
+                This product is in waitlist, book now to claim piece
+            </p>
             <Button
                 onClick={() => {
                     makePayment();
                 }}
             >
-                Reserve your piece
+                Reserve your piece for ₹{formatNumber(price)}
             </Button>
         </>
     );

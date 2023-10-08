@@ -6,10 +6,11 @@ import Image from 'next/image';
 import { PaymentBtn } from '../../../components/Product/PaymentBtn';
 import { createSentenceFromArray } from '@/utils/text.utils';
 import { Fragment, useState } from 'react';
-import { getRandomNumber } from '@/utils/numbers.utils';
+import { formatNumber, getRandomNumber } from '@/utils/numbers.utils';
 import { ProductDetails } from '@/components/Product/ProductDetails';
 import { ManufacturerDetails } from '@/components/Product/ManufacturerDetails';
 import dynamic from 'next/dynamic';
+import { BRAND_NAME } from '@/constants/common.constants';
 // async function getProducts() {
 //     try {
 //         const res = await fetch('http://localhost:3000/products.json');
@@ -68,13 +69,12 @@ const Products = ({ params }: { params: { id: string } }) => {
     };
     const [sizeSelected, setSizeSelected] = useState('');
     const prices = {
-        ourBrand: item.price,
+        [BRAND_NAME]: item.price,
         ...item.pricesComparison,
     };
-    type brandsType = keyof typeof prices;
     const brands = Object.keys(prices);
     const calculateSavingsPercentage = (price: number) => {
-        const brandPrice = prices.ourBrand;
+        const brandPrice = prices[BRAND_NAME];
         return ((price - brandPrice) / price) * 100;
     };
 
@@ -101,9 +101,7 @@ const Products = ({ params }: { params: { id: string } }) => {
                     </div>
                     <div className="p-6 grow-0 flex flex-col gap-2">
                         <p className="text-gray-500 font-light text-lg">{item.description}</p>
-                        <Button variant={'link'} size={'sm'} className="w-fit p-0 text-xs h-auto">
-                            Size chart
-                        </Button>
+                        <p className="text-xs">Select size</p>
                         <div className="cursor-pointer flex gap-2">
                             {item.sizeOptions.map((item, index) => {
                                 return (
@@ -122,8 +120,8 @@ const Products = ({ params }: { params: { id: string } }) => {
                                 );
                             })}
                         </div>
-                        <div className="flex gap-2 items-center">
-                            <span className="text-lg">₹{item.price}</span>{' '}
+                        <div className="flex gap-2 items-center my-1">
+                            <span className="text-lg">₹{formatNumber(item.price)}</span>{' '}
                         </div>
                         <PaymentBtn price={item.price} />
                         <NumProductsText />
@@ -139,7 +137,7 @@ const Products = ({ params }: { params: { id: string } }) => {
                                 {Object.entries(prices).map(([brand, price]) => (
                                     <tr key={brand} className="text-center">
                                         <td className="p-2 border"> {brand}</td>
-                                        <td className="p-2 border">₹{price}</td>
+                                        <td className="p-2 border">₹{formatNumber(price)}</td>
                                         <td className="p-2 border ">
                                             {brand === 'ourBrand' ? (
                                                 <CheckCircle className="mx-auto" />

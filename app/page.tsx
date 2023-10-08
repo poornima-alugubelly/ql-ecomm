@@ -89,6 +89,7 @@ export default async function Page() {
                     link: '1',
                 },
                 author: 'Joe smith',
+                designation: 'CEO at Acme corp',
             },
             {
                 avatarImg: 'https://i.pravatar.cc/300',
@@ -99,6 +100,7 @@ export default async function Page() {
                     link: '`',
                 },
                 author: 'Joanna smith',
+                designation: 'Director of Engg at abcefgh',
             },
             {
                 avatarImg: 'https://i.pravatar.cc/300',
@@ -109,6 +111,7 @@ export default async function Page() {
                     link: '1',
                 },
                 author: 'David gray',
+                designation: 'Product designer at Razorcash',
             },
         ],
     };

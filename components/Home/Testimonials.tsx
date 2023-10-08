@@ -44,9 +44,12 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                                         height={56}
                                         className="rounded-full mx-auto mt-2"
                                     ></Image>
-                                    <div className="uppercase text-zinc-600 text-xs text-center text-bold mb-3">
+                                    <p className="uppercase text-zinc-600 text-base text-center font-bold mt-2">
                                         {item.author}
-                                    </div>
+                                    </p>
+                                    <p className="text-xs text-gray-500 text-center mb-3">
+                                        {item.designation}
+                                    </p>
                                     <div className="bg-background text-zinc-700  grow-0 text-xs md:text-base  font-light rounded-l-md">
                                         {item.testimonial}
                                     </div>
@@ -80,6 +83,6 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                     })}
                 </div>
             </div>
-        </section> // h-[130px] max-w-[200px] md:w-[300px]
+        </section>
     );
 };
