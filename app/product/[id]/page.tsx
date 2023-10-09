@@ -85,14 +85,14 @@ const Products = ({ params }: { params: { id: string } }) => {
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
                 {item.productImages.map((imgSrc) => {
                     return (
-                        <img
+                        <Image
                             src={imgSrc}
                             width={400}
                             height={400}
                             alt="product"
                             key={imgSrc}
                             loading="lazy"
-                        ></img>
+                        ></Image>
                     );
                 })}
             </div>
