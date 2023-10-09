@@ -22,13 +22,12 @@ export const BestSelling = () => {
                             href="/product/1"
                         >
                             <div style={{ width: '100%', height: '200px', position: 'relative' }}>
-                                <Image
+                                <img
                                     src="https://picsum.photos/200/300"
                                     alt="prduct-img"
                                     className="object-fit w-full h-full"
-                                    fill
                                     loading="lazy"
-                                ></Image>
+                                ></img>
                             </div>
                             <div className="p-4 border border-zinc-500">
                                 <p className="text-xl font-qara font-semibold">Mink Coat</p>
