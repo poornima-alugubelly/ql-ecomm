@@ -43,7 +43,7 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                                         width={56}
                                         height={56}
                                         className="rounded-full mx-auto mt-2"
-                                        loading="lazy"
+                                        // loading="lazy"
                                     ></img>
                                     <p className="uppercase text-zinc-600 text-base text-center font-bold mt-2">
                                         {item.author}

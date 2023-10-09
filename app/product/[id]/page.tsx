@@ -91,7 +91,7 @@ const Products = ({ params }: { params: { id: string } }) => {
                             height={400}
                             alt="product"
                             key={imgSrc}
-                            loading="lazy"
+                            // loading="lazy"
                         ></img>
                     );
                 })}

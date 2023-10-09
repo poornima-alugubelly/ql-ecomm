@@ -26,7 +26,7 @@ export const BestSelling = () => {
                                     src="https://picsum.photos/200/300"
                                     alt="prduct-img"
                                     className="object-fit w-full h-full"
-                                    loading="lazy"
+                                    // loading="lazy"
                                 ></img>
                             </div>
                             <div className="p-4 border border-zinc-500">
