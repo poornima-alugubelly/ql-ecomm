@@ -42,8 +42,8 @@ const Products = ({ params }: { params: { id: string } }) => {
         productImages: [
             'https://content.italic.com/df2eba8a-ca34-43a7-9f3c-780244f4266e.jpeg?ixlib=react-9.8.0&q=80&w=992&auto=format&fit=max',
             'https://content.italic.com/2055d867-f0de-473c-a9ee-dba053d6299f.jpeg?ixlib=react-9.8.0&q=80&w=992&auto=format&fit=max',
-            'https://content.italic.com/c103b2bb-a9e4-4900-9e1f-0d53d0048e3f.jpeg?ixlib=react-9.8.0&q=80&w=992&auto=format&fit=max',
-            'https://content.italic.com/7627c6de-bb49-440f-a56b-b281222951b4.jpeg?ixlib=react-9.8.0&q=80&w=992&auto=format&fit=max',
+            'https://content.italic.com/df2eba8a-ca34-43a7-9f3c-780244f4266e.jpeg?ixlib=react-9.8.0&q=80&w=992&auto=format&fit=max',
+            'https://content.italic.com/2055d867-f0de-473c-a9ee-dba053d6299f.jpeg?ixlib=react-9.8.0&q=80&w=992&auto=format&fit=max',
         ],
         materialsAndCare: [
             'Easy to wash',
@@ -84,7 +84,16 @@ const Products = ({ params }: { params: { id: string } }) => {
         <div className="flex flex-col md:flex-row gap-12 my-6 container items-start">
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
                 {item.productImages.map((imgSrc) => {
-                    return <Image src={imgSrc} width={400} height={400} alt="product" key={imgSrc}></Image>;
+                    return (
+                        <img
+                            src={imgSrc}
+                            width={400}
+                            height={400}
+                            alt="product"
+                            key={imgSrc}
+                            loading="lazy"
+                        ></img>
+                    );
                 })}
             </div>
             <div>
