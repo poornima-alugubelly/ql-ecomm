@@ -395,42 +395,6 @@ export const carouselProducts = [
             prada: 50000,
         },
     },
-
-    {
-        id: '10',
-        name: 'Emelie Featherlight Silk-Cashmere Knit Tee',
-        description: `Crafted from a luxurious blend of pure mulberry silk and Grade-A Mongolian cashmere, this essential piece for your wardrobe offers a light and breathable sensation that's ideal for year-round wear.`,
-        price: 16000,
-        Sizes: ['XS', 'S', 'M', 'L', 'XL'],
-        productImages: [
-            'https://content.italic.com/8bf17d47-0de0-4ecc-8155-3220bbbc4228.jpeg?ixlib=react-9.8.0&q=80&w=128&auto=format&fit=max',
-            'https://content.italic.com/f90af31a-0526-4df8-b796-05d997b7ece3.jpeg?ixlib=react-9.8.0&q=80&w=128&auto=format&fit=max',
-            'https://content.italic.com/990dce00-0e44-417e-91ba-fcc7aeecc131.jpeg?ixlib=react-9.8.0&q=80&w=128&auto=format&fit=max',
-            'https://content.italic.com/45080fb7-4ef0-4684-95f4-7bd9e24a4649.jpeg?ixlib=react-9.8.0&q=80&w=128&auto=format&fit=max',
-        ],
-        aboutManufacturer: {
-            'PAST CLIENTS': ['Sandro', 'Maje'],
-            CERTIFICATIONS: ['ISO 9001', 'GRS', 'BSCI', 'Sedex'],
-            'OPERATING SINCE': ['2000'],
-        },
-        productInformation: {
-            MATERIALS: ['85% mulberry silk, 15% Mongolian cashmere'],
-            DETAILS: [
-                'True-to-size fit',
-                'Lightweight knit structure for maximum comfort and breathability',
-                'Silk-Cashmere blend gives you the softness of cashmere with the smoothness of silk',
-            ],
-            'Model Size': [
-                'Model wearing Black is 5\'9", wearing size Small.',
-                'Model wearing Beige Stripe is 5\'10", wearing size Small.',
-            ],
-            'Care Instructions': ['Dry clean only'],
-        },
-        pricesComparison: {
-            gucci: 30000,
-            prada: 50000,
-        },
-    },
     {
         id: '11',
         name: 'Remi Cashmere Throw',
@@ -454,6 +418,41 @@ export const carouselProducts = [
             WEIGHT: ['1.06 lbs (480 g)'],
             MATERIALS: ['100% cashmere'],
             DETAILS: ['Soft fringe', 'Large in size'],
+            'Care Instructions': ['Dry clean only'],
+        },
+        pricesComparison: {
+            gucci: 30000,
+            prada: 50000,
+        },
+    },
+    {
+        id: '10',
+        name: 'Emelie Featherlight Silk-Cashmere Knit Tee',
+        description: `Crafted from a luxurious blend of pure mulberry silk and Grade-A Mongolian cashmere, this essential piece for your wardrobe offers a light and breathable sensation that's ideal for year-round wear.`,
+        price: 16000,
+        Sizes: ['XS', 'S', 'M', 'L', 'XL'],
+        productImages: [
+            'https://content.italic.com/8bf17d47-0de0-4ecc-8155-3220bbbc4228.jpeg?ixlib=react-9.8.0&q=80&w=1600&auto=format&fit=max',
+            'https://content.italic.com/6c3c25a4-3bc2-4526-a90a-373ea005de61.jpeg?ixlib=react-9.8.0&q=80&w=1600&auto=format&fit=max',
+            'https://content.italic.com/990dce00-0e44-417e-91ba-fcc7aeecc131.jpeg?ixlib=react-9.8.0&q=80&w=1600&auto=format&fit=max',
+            'https://content.italic.com/45080fb7-4ef0-4684-95f4-7bd9e24a4649.jpeg?ixlib=react-9.8.0&q=80&w=1600&auto=format&fit=max',
+        ],
+        aboutManufacturer: {
+            'PAST CLIENTS': ['Sandro', 'Maje'],
+            CERTIFICATIONS: ['ISO 9001', 'GRS', 'BSCI', 'Sedex'],
+            'OPERATING SINCE': ['2000'],
+        },
+        productInformation: {
+            MATERIALS: ['85% mulberry silk, 15% Mongolian cashmere'],
+            DETAILS: [
+                'True-to-size fit',
+                'Lightweight knit structure for maximum comfort and breathability',
+                'Silk-Cashmere blend gives you the softness of cashmere with the smoothness of silk',
+            ],
+            'Model Size': [
+                'Model wearing Black is 5\'9", wearing size Small.',
+                'Model wearing Beige Stripe is 5\'10", wearing size Small.',
+            ],
             'Care Instructions': ['Dry clean only'],
         },
         pricesComparison: {

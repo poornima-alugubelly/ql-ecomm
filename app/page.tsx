@@ -38,14 +38,13 @@ export default async function Page() {
         carousel: [
             {
                 productImg:
-                    'https://air-prod.imgix.net/060c3a77-fced-4035-9a1a-8da941ec42e7.jpg?w=3840&h=2040&fm=jpg&fit=crop',
-
+                    'https://air-prod.imgix.net/df92a94b-864f-4d07-bca5-e5d65b48042f.jpg?w=3840&h=2040&fm=jpg&fit=crop',
                 ...carouselProducts[0],
                 mwebImage:
-                    'https://air-prod.imgix.net/9b5e6771-47fc-4eea-a511-3b6d2c72daad.jpg?w=894&h=900&fm=jpg&fit=crop',
+                    'https://air-prod.imgix.net/e1ea7220-22e4-46fd-a7cf-d6830459ef8b.jpg?w=1788&h=1800&fm=jpg&fit=crop',
                 cta: {
                     text: 'Get now',
-                    link: 'link',
+                    link: '1',
                 },
             },
             {
@@ -59,15 +58,17 @@ export default async function Page() {
                     link: '1',
                 },
             },
+
             {
                 productImg:
-                    'https://air-prod.imgix.net/df92a94b-864f-4d07-bca5-e5d65b48042f.jpg?w=3840&h=2040&fm=jpg&fit=crop',
+                    'https://air-prod.imgix.net/060c3a77-fced-4035-9a1a-8da941ec42e7.jpg?w=3840&h=2040&fm=jpg&fit=crop',
+
                 ...carouselProducts[2],
                 mwebImage:
-                    'https://air-prod.imgix.net/e1ea7220-22e4-46fd-a7cf-d6830459ef8b.jpg?w=1788&h=1800&fm=jpg&fit=crop',
+                    'https://air-prod.imgix.net/9b5e6771-47fc-4eea-a511-3b6d2c72daad.jpg?w=894&h=900&fm=jpg&fit=crop',
                 cta: {
                     text: 'Get now',
-                    link: '1',
+                    link: 'link',
                 },
             },
         ],
