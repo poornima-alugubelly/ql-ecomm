@@ -19,57 +19,57 @@ register();
 // }
 const Carousel = ({ data }) => {
     const swiperRef = useRef(null);
-    document.addEventListener(
-        'mouseenter',
-        (event) => {
-            const el = event.target;
-            if (el && el.matches && el.matches('.swiper-container')) {
-                el.swiper.autoplay.stop();
-                el.classList.add('swiper-paused');
+    // document.addEventListener(
+    //     'mouseenter',
+    //     (event) => {
+    //         const el = event.target;
+    //         if (el && el.matches && el.matches('.swiper-container')) {
+    //             el.swiper.autoplay.stop();
+    //             el.classList.add('swiper-paused');
 
-                const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
-                activeNavItem.style.animationPlayState = 'paused';
-            }
-        },
-        true
-    );
+    //             const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
+    //             activeNavItem.style.animationPlayState = 'paused';
+    //         }
+    //     },
+    //     true
+    // );
 
-    document.addEventListener(
-        'mouseleave',
-        (event) => {
-            const el = event.target;
-            if (el && el.matches && el.matches('.swiper-container')) {
-                el.swiper.autoplay.start();
-                el.classList.remove('swiper-paused');
+    // document.addEventListener(
+    //     'mouseleave',
+    //     (event) => {
+    //         const el = event.target;
+    //         if (el && el.matches && el.matches('.swiper-container')) {
+    //             el.swiper.autoplay.start();
+    //             el.classList.remove('swiper-paused');
 
-                const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
+    //             const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
 
-                activeNavItem.classList.remove('swiper-pagination-bullet-active');
-                // activeNavItem.style.animation = 'none';
+    //             activeNavItem.classList.remove('swiper-pagination-bullet-active');
+    //             // activeNavItem.style.animation = 'none';
 
-                setTimeout(() => {
-                    activeNavItem.classList.add('swiper-pagination-bullet-active');
-                    // activeNavItem.style.animation = '';
-                }, 5000);
-            }
-        },
-        true
-    );
+    //             setTimeout(() => {
+    //                 activeNavItem.classList.add('swiper-pagination-bullet-active');
+    //                 // activeNavItem.style.animation = '';
+    //             }, 5000);
+    //         }
+    //     },
+    //     true
+    // );
     useEffect(() => {
         const swiperContainer = swiperRef.current;
         const params = {
             navigation: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            // },
 
             watchSlidesProgress: true,
             loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            // },
 
             longSwipes: false,
 
@@ -148,28 +148,40 @@ const Carousel = ({ data }) => {
     }, []);
 
     return (
-        <div className="z-0 sticky top-0">
+        <div className="z-0 sticky top-16 md:top-0">
             <div className="relative">
-                <swiper-container ref={swiperRef} init="false">
+                <swiper-container
+                    ref={swiperRef}
+                    init="false"
+                    className="w-full h-[400px] md:h-[720px] relative"
+                >
                     {data.map((item) => {
                         const brands = Object.keys(item.pricesComparison);
                         return (
                             <swiper-slide key={item.name + 'carousel'}>
-                                <div style={{ width: '100%', height: '720px' }} className="flex">
-                                    <div style={{ width: '100%', height: '720px', position: 'relative' }}>
+                                <div className="flex">
+                                    <div className="w-full h-full relative">
                                         <img
                                             src={item.productImg}
                                             alt="product"
-                                            className="w-full h-full"
+                                            className="w-full h-full hidden md:block"
+
                                             // loading="lazy"
                                         ></img>
-                                        <div className=" font-ebGaramond   px-2.5 md:px-8 max-w-[50%] md:max-w-[40%]   absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 left-[10%] flex flex-col items-center justify-center glass-effect">
-                                            <p className="header-4 md:header-3 text-white  text-center">
+                                        <img
+                                            src={item.mwebImage}
+                                            alt="product"
+                                            className="w-full h-full md:hidden object-cover"
+
+                                            // loading="lazy"
+                                        ></img>
+                                        <div className="font-ebGaramond   px-2.5 md:px-8  md:max-w-[40%] absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 left-[10%] flex flex-col  md:items-center md:justify-center md:glass-effect">
+                                            <p className="header-6 md:header-3 text-white text-left md:text-center">
                                                 {item.name}
                                             </p>
                                             {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
                                              */}
-                                            <div className="text-xs text-white text-center mt-2 font-thin px-2 opacity-80">
+                                            <div className="text-xs text-white md:text-center mt-2 font-thin px-2 opacity-80">
                                                 <span className="text-xs md:text-base">
                                                     From the makers of{' '}
                                                 </span>
@@ -193,8 +205,15 @@ const Carousel = ({ data }) => {
                                             </div>
 
                                             <Link
-                                                className=" btn  bg-background hover:bg-primaryBrown hover:text-white
-                                                inline-flex py-1.5 px-3  items-center justify-center text-base md:text-lg mt-2 font-normal ring-offset-background transition-colors"
+                                                className="hidden md:inline-flex md:btn  bg-background hover:bg-primaryBrown hover:text-white
+                                                 md:py-1.5 px-3  items-center justify-center text-base md:text-lg mt-2 font-normal ring-offset-background transition-colors"
+                                                href={`/product/${item.id}`}
+                                                prefetch={false}
+                                            >
+                                                {item.cta.text}
+                                            </Link>
+                                            <Link
+                                                className="block md:hidden px-1 w-fit py-1 rounded-lg text-xs border border-white text-white ml-2 mt-2"
                                                 href={`/product/${item.id}`}
                                                 prefetch={false}
                                             >

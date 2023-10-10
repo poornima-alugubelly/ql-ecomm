@@ -27,6 +27,7 @@ const Carousel = dynamic(() => import('../components/Home/Carousel'), {
 //             console.error(error.message);
 //         }
 //     }
+
 // }
 export default async function Page() {
     // const data: homePageDataType = await getData();
@@ -38,8 +39,10 @@ export default async function Page() {
             {
                 productImg:
                     'https://air-prod.imgix.net/060c3a77-fced-4035-9a1a-8da941ec42e7.jpg?w=3840&h=2040&fm=jpg&fit=crop',
-                ...carouselProducts[0],
 
+                ...carouselProducts[0],
+                mwebImage:
+                    'https://air-prod.imgix.net/9b5e6771-47fc-4eea-a511-3b6d2c72daad.jpg?w=894&h=900&fm=jpg&fit=crop',
                 cta: {
                     text: 'Get now',
                     link: 'link',
@@ -49,7 +52,8 @@ export default async function Page() {
                 productImg:
                     'https://air-prod.imgix.net/9df4d3a2-5bd3-4421-92b4-72d486cffbef.jpg?w=4267&h=2400&fm=jpg&fit=crop',
                 ...carouselProducts[1],
-
+                mwebImage:
+                    'https://air-prod.imgix.net/6efa6cd6-06cc-4e22-8cdd-a6eba81c3428.jpg?w=1800&h=1800&fm=jpg&fit=crop',
                 cta: {
                     text: 'Get now',
                     link: '1',
@@ -59,7 +63,8 @@ export default async function Page() {
                 productImg:
                     'https://air-prod.imgix.net/df92a94b-864f-4d07-bca5-e5d65b48042f.jpg?w=3840&h=2040&fm=jpg&fit=crop',
                 ...carouselProducts[2],
-
+                mwebImage:
+                    'https://air-prod.imgix.net/e1ea7220-22e4-46fd-a7cf-d6830459ef8b.jpg?w=1788&h=1800&fm=jpg&fit=crop',
                 cta: {
                     text: 'Get now',
                     link: '1',

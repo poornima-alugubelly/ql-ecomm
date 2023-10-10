@@ -7,7 +7,7 @@ export const BestSelling = () => {
     return (
         <div className="container py-4">
             <h3 className=" mt-8 mb-6 my-3 header-6 md:header-4 text-mocha-dark italic ">Best Sellers</h3>
-            <div className="flex flex-wrap mx-auto justify-center md:justify-between gap-y-8 ">
+            <div className="flex flex-wrap gap-x-8 mx-auto justify-center md:justify-between gap-y-8 ">
                 {bestSellers.map((item) => {
                     const brands = Object.keys(item.pricesComparison);
                     return (

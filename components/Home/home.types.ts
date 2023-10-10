@@ -73,5 +73,6 @@ export type ProductType = {
 
 export type carouselItemType = ProductType & {
     productImg: string;
+    mwebImage: string;
     cta: ctaType;
 };
