@@ -1,38 +1,34 @@
 import Image from 'next/image';
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { bestSellers } from '@/data/data';
 
 export const BestSelling = () => {
-    // const router = useRouter();
-    const brands = ['Away', 'Boss'];
-
     return (
         <div className="container py-4">
-            <h3 className="md:text-4xl mt-8 mb-6 my-3  font-qara font-light ">BEST SELLING</h3>
-            <div className="grid md:grid-cols-3 md:grid-rows-2 gap-y-8 gap-x-16">
-                {[1, 2, 3, 4, 5, 6].map((item) => {
+            <h3 className=" mt-8 mb-6 my-3 header-6 md:header-4 text-mocha-dark italic ">Best Sellers</h3>
+            <div className="flex flex-wrap mx-auto justify-center md:justify-between gap-y-8 ">
+                {bestSellers.map((item) => {
+                    const brands = Object.keys(item.pricesComparison);
                     return (
                         <Link
-                            className="flex flex-col md:w-[260px] group hover:card-shadow transition-all duration-300 hover:-translate-y-2 hover:card-shine-effect "
-                            key={item}
-                            // onClick={() => {
-                            //     router.push('/product/1');
-                            // }}
-                            href="/product/1"
+                            className="border border-zinc-500 flex flex-col w-[270px] md:w-[250px] group hover:card-shadow transition-all duration-300 hover:-translate-y-2 hover:card-shine-effect "
+                            key={item.id + 'best-sellers'}
+                            prefetch={false}
+                            href={`/product/${item.id}`}
                         >
-                            <div style={{ width: '100%', height: '200px', position: 'relative' }}>
+                            <div className="w-full h-[260px]  md:h-[243px] relative">
                                 <img
-                                    src="https://picsum.photos/200/300"
-                                    alt="prduct-img"
-                                    className="object-fit w-full h-full"
+                                    src={item.productImages[0]}
+                                    alt={item.name}
+                                    className="object-fit w-full h-full border-none z-10"
                                     // loading="lazy"
                                 ></img>
                             </div>
-                            <div className="p-4 border border-zinc-500">
-                                <p className="text-xl font-qara font-semibold">Mink Coat</p>
-                                <p className="text-xs text-gray-500 py-1.5">Same manufacturer as</p>
-                                <div className="flex items-center gap-1 uppercase font-bold">
+                            <div className="p-4 border-t border-zinc-500">
+                                <p className="header-8 text-mocha-dark">{item.name}</p>
+                                <p className="text-caption text-zinc-500 py-1.5">Same manufacturer as</p>
+                                <div className="flex items-center gap-1">
                                     {brands.map((item, index) => (
                                         <>
                                             <p className="text-xs">{item}</p>
@@ -40,7 +36,7 @@ export const BestSelling = () => {
                                         </>
                                     ))}
                                 </div>
-                                <p className="font-bold mt-2.5">₹3000</p>
+                                <p className="text-sm mt-2.5">₹${item.price}</p>
                             </div>
                         </Link>
                     );

@@ -5,6 +5,7 @@ import { Button } from '../ui/button';
 import { formatNumber } from '@/utils/numbers.utils';
 
 export const PaymentBtn = ({ price }) => {
+    console.log(price);
     const makePayment = async () => {
         try {
             const data = await fetch('/api/rzp', {

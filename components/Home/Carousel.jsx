@@ -24,8 +24,6 @@ const Carousel = ({ data }) => {
         (event) => {
             const el = event.target;
             if (el && el.matches && el.matches('.swiper-container')) {
-                // console.log('mouseenter');
-                // console.log('autoplay running', swiper.autoplay.running);
                 el.swiper.autoplay.stop();
                 el.classList.add('swiper-paused');
 
@@ -39,8 +37,6 @@ const Carousel = ({ data }) => {
     document.addEventListener(
         'mouseleave',
         (event) => {
-            // console.log('mouseleave', swiper.activeIndex, swiper.slides[swiper.activeIndex].progress);
-            // console.log('autoplay running', swiper.autoplay.running);
             const el = event.target;
             if (el && el.matches && el.matches('.swiper-container')) {
                 el.swiper.autoplay.start();
@@ -70,10 +66,10 @@ const Carousel = ({ data }) => {
 
             watchSlidesProgress: true,
             loop: true,
-            // autoplay: {
-            //     delay: 5000,
-            //     disableOnInteraction: false,
-            // },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
 
             longSwipes: false,
 
@@ -158,26 +154,26 @@ const Carousel = ({ data }) => {
                     {data.map((item) => {
                         const brands = Object.keys(item.pricesComparison);
                         return (
-                            <swiper-slide class="blue-slide" key={item}>
-                                <div style={{ width: '100%', height: '600px' }} className="flex">
-                                    <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+                            <swiper-slide key={item.name + 'carousel'}>
+                                <div style={{ width: '100%', height: '720px' }} className="flex">
+                                    <div style={{ width: '100%', height: '720px', position: 'relative' }}>
                                         <img
                                             src={item.productImg}
                                             alt="product"
                                             className="w-full h-full"
                                             // loading="lazy"
                                         ></img>
-                                        <div className="px-2.5 md:px-8 max-w-[50%] md:max-w-[30%]   absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 left-[10%] flex flex-col items-center justify-center glass-effect">
-                                            <p className="text-lg md:text-3xl font-qara uppercase text-center">
-                                                {item.title}
+                                        <div className=" font-ebGaramond   px-2.5 md:px-8 max-w-[50%] md:max-w-[40%]   absolute  bottom-[10%] md:bottom-[15%] py-6 md:py-10 left-[10%] flex flex-col items-center justify-center glass-effect">
+                                            <p className="header-4 md:header-3 text-white  text-center">
+                                                {item.name}
                                             </p>
                                             {/* <p className="text-xl highlight-effect">{item.subtitle}</p>
                                              */}
-                                            <div className="text-xs  text-center mt-2 font-thin px-2 opacity-80">
-                                                <span className="text-caption md:text-xs">
+                                            <div className="text-xs text-white text-center mt-2 font-thin px-2 opacity-80">
+                                                <span className="text-xs md:text-base">
                                                     From the makers of{' '}
                                                 </span>
-                                                <span className="font-bold  uppercase flex gap-2 text-center mx-auto">
+                                                <span className="font-bold  uppercase flex gap-2 text-center mx-auto text-white">
                                                     {/* {createSentenceFromArray(item.brands)}
                                                      */}
                                                     {brands.map((brand, index) => (
@@ -185,7 +181,7 @@ const Carousel = ({ data }) => {
                                                             className="flex items-center"
                                                             key={brand + 'carousel'}
                                                         >
-                                                            <p className="text-base md:text-base font-black ">
+                                                            <p className="text-base md:text-lg font-black ">
                                                                 {brand}
                                                             </p>
                                                             {index !== brands.length - 1 && (
@@ -199,7 +195,8 @@ const Carousel = ({ data }) => {
                                             <Link
                                                 className=" btn  bg-background hover:bg-primaryBrown hover:text-white
                                                 inline-flex py-1.5 px-3  items-center justify-center text-base md:text-lg mt-2 font-normal ring-offset-background transition-colors"
-                                                href={'/product/1'}
+                                                href={`/product/${item.id}`}
+                                                prefetch={false}
                                             >
                                                 {item.cta.text}
                                             </Link>

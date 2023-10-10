@@ -12,13 +12,13 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
     return (
         <section className="mt-8">
             <div className="container py-4">
-                <h3 className="text-3xl md:text-4xl mt-8 mb-6 font-qara uppercase">Testimonials</h3>
+                <h3 className="header-6 md:header-4 mt-8 mb-6 font-qara italic">Testimonials</h3>
                 <div className="grid md:grid-cols-3 auto-cols-auto  gap-6 md:gap-16">
                     {data.map((item) => {
                         return (
                             <Link
                                 className="border border-black  h-auto flex relative shadow-lg"
-                                href={'/product/1'}
+                                href={`/product/${item.productId}`}
                                 key={item.testimonial}
                             >
                                 <svg
@@ -45,20 +45,20 @@ export const Testimonials = ({ data }: TestimonialCardProps) => {
                                         className="rounded-full mx-auto mt-2"
                                         // loading="lazy"
                                     ></img>
-                                    <p className="uppercase text-zinc-600 text-base text-center font-bold mt-2">
+                                    <p className="uppercase text-zinc-600 text-base text-center  mt-2">
                                         {item.author}
                                     </p>
-                                    <p className="text-xs text-gray-500 text-center mb-3">
+                                    <p className="text-xs text-zinc-500 text-center mb-3">
                                         {item.designation}
                                     </p>
-                                    <div className="bg-background text-zinc-700  grow-0 text-xs md:text-base  font-light rounded-l-md">
+                                    <div className="bg-background text-zinc-700  grow-0 text-xs md:text-sm  font-light rounded-l-md">
                                         {item.testimonial}
                                     </div>
                                     <div className="flex justify-between mt-auto ">
                                         <Button
                                             variant={'link'}
                                             size={'link'}
-                                            className="font-bold text-zinc-800 ml-auto mt-2 text-xs md:text-base"
+                                            className="font-ebGaramond text-zinc-800 ml-auto mt-2 text-xs md:text-base"
                                         >
                                             {item.cta.text}
                                             <svg

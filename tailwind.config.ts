@@ -20,11 +20,8 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                sfpro: ['var(--font-sfpro)'],
-                qara: ['var(--font-qara)'],
-                sacramento: ['Sacramento', 'cursive'],
-                cinzel: ['Cinzel', 'serif'],
-                raleway: ['Raleway', 'sans-serif'],
+                inter: ['var(--font-inter)'],
+                ebGaramond: ['var(--font-ebGaramond)'],
             },
             fontSize: {
                 caption: '0.625rem',
