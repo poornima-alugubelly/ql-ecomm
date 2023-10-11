@@ -138,7 +138,7 @@ const Products = ({ params }: { params: { id: string } }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {Object.entries(item.pricesComparison).map(([brand, price]) => (
+                                {Object.entries(prices).map(([brand, price]) => (
                                     <tr key={brand} className="text-center">
                                         <td className="p-2 border"> {brand}</td>
                                         <td className="p-2 border">₹{formatNumber(price)}</td>
