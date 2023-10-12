@@ -17,7 +17,12 @@ export async function POST(req: Request) {
         currency,
         receipt: shortid.generate(),
         payment_capture,
+        notes: [],
     };
+
+    if (request.notes) {
+        options['notes'] = { ...request.notes };
+    }
 
     try {
         const response = await razorpay.orders.create(options);

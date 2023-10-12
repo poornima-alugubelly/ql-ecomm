@@ -6,8 +6,33 @@ import { carouselItemType, homePageDataType, testimonialType } from '@/component
 import { Suspense } from 'react';
 import { Quote } from 'lucide-react';
 import { carouselProducts } from '@/data/data';
+import type { Metadata } from 'next';
+import { BRAND_TAGLINE, BRAND_NAME, BRAND_DESCRIPTION } from '@/constants/common.constants';
 export const revalidate = 60;
 
+export const metadata: Metadata = {
+    title: `${BRAND_NAME}: ${BRAND_TAGLINE}`,
+    description: BRAND_DESCRIPTION,
+    icons: [
+        {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '32x32',
+            url: '/favicn/favicon-32x32.png',
+        },
+        {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '16x16',
+            url: '/favicn/favicon-16x16.png',
+        },
+        {
+            rel: 'apple-touch-icon',
+            sizes: '180x180',
+            url: '/favicn/apple-touch-icon.png',
+        },
+    ],
+};
 /**
  * Swiper components must be dynamically imported with { ssr: false }.
  */

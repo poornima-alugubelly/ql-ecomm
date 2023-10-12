@@ -1,24 +1,16 @@
 'use client';
 import { CheckCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import { PaymentBtn } from '../../../components/Product/PaymentBtn';
 import { createSentenceFromArray } from '@/utils/text.utils';
-import { Fragment, useState } from 'react';
-import { formatNumber, getRandomNumber } from '@/utils/numbers.utils';
+import { useState } from 'react';
+import { formatNumber } from '@/utils/numbers.utils';
 import { ProductDetails } from '@/components/Product/ProductDetails';
 import { ManufacturerDetails } from '@/components/Product/ManufacturerDetails';
 import dynamic from 'next/dynamic';
 import { BRAND_NAME } from '@/constants/common.constants';
-import products from 'razorpay/dist/types/products';
 import { allProducts } from '@/data/data';
-import {
-    AboutManufacturerType,
-    Dimensions,
-    ProductInformationType,
-    ProductType,
-} from '@/components/Home/home.types';
+import { AboutManufacturerType, ProductInformationType } from '@/components/Home/home.types';
 // async function getProducts() {
 //     try {
 //         const res = await fetch('http://localhost:3000/products.json');
@@ -127,7 +119,15 @@ const Products = ({ params }: { params: { id: string } }) => {
                         <div className="flex gap-2 items-center my-1">
                             <span className="text-lg">₹{formatNumber(itemPrice)}</span>{' '}
                         </div>
-                        <PaymentBtn price={itemPrice} />
+                        <PaymentBtn
+                            body={{
+                                price: itemPrice,
+                                notes: {
+                                    size: sizeSelected,
+                                },
+                            }}
+                            requiredPayment={Boolean(item.sizeOptions)}
+                        />
                         <NumProductsText />
                         <table className="border-collapse border rounded-lg text-xs">
                             <thead>

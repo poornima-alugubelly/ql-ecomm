@@ -26,7 +26,7 @@ export const BestSelling = () => {
                                 ></img>
                             </div>
                             <div className="p-4 border-t border-zinc-500">
-                                <p className="header-8 text-mocha-dark">{item.name}</p>
+                                <p className="text-lg font-ebGaramond text-mocha-dark">{item.name}</p>
                                 <p className="text-caption text-zinc-500 py-1.5">Same manufacturer as</p>
                                 <div className="flex items-center gap-1">
                                     {brands.map((item, index) => (
@@ -36,7 +36,7 @@ export const BestSelling = () => {
                                         </>
                                     ))}
                                 </div>
-                                <p className="text-sm mt-2.5">₹${item.price}</p>
+                                <p className="text-sm mt-2.5">₹{item.price}</p>
                             </div>
                         </Link>
                     );

@@ -3,22 +3,25 @@
 import Script from 'next/script';
 import { Button } from '../ui/button';
 import { formatNumber } from '@/utils/numbers.utils';
+import { BRAND_NAME } from '@/constants/common.constants';
 
-export const PaymentBtn = ({ price }) => {
-    console.log(price);
+export const PaymentBtn = ({ body, requiredPayment }) => {
+    const { price, notes } = body;
+
     const makePayment = async () => {
         try {
             const data = await fetch('/api/rzp', {
                 method: 'POST',
-                body: JSON.stringify({ price }),
+                body: JSON.stringify({ price, notes }),
             }).then((t) => t.json());
-            console.log('data', data);
+
             const options = {
                 currency: 'INR',
                 amount: data.amount,
-                name: 'Origins',
+                name: BRAND_NAME,
                 description: 'Luxury Products',
                 order_id: data.id,
+                notes: data.notes,
                 handler: function (response) {
                     // Validate payment at server - using webhooks is a better idea.
                     // alert(response.razorpay_payment_id);
@@ -67,6 +70,7 @@ export const PaymentBtn = ({ price }) => {
                 onClick={() => {
                     makePayment();
                 }}
+                disabled={requiredPayment && !notes.size}
             >
                 Reserve your piece for ₹{formatNumber(price)}
             </Button>

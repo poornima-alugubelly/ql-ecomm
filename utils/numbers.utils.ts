@@ -11,5 +11,5 @@ export const formatNumber = (num: string | number) => {
     } else {
         val = 0;
     }
-    return num.toLocaleString();
+    return num?.toLocaleString();
 };

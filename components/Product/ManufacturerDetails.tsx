@@ -16,7 +16,7 @@ export const ManufacturerDetails: React.FC<ManufacturerDetailsProps> = ({ manufa
 
                     <ul className="flex gap-2">
                         {value.map((item, index) => (
-                            <li key={index} className="text-mocha-text">
+                            <li key={index} className="text-mocha-text text-sm">
                                 {item}
                             </li>
                         ))}

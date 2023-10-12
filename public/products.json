@@ -163,10 +163,10 @@
             "description": "In search of a comforter that combines sustainability with comfort? Look no further. Our comforter is filled with premium, sustainably sourced down alternative and enclosed in a 300 thread count shell crafted from pure eucalyptus fibers. These fibers are not only soft and smooth but also hypoallergenic, ensuring you enjoy a restful night's sleep in a bedding that's gentle on both your skin and the environment.",
             "price": 16000,
             "sizeOptions": {
-                "TWIN": "$81",
-                "FULL / QUEEN": "$104",
-                "KING / CALIFORNIA KING": "$120",
-                "DELUXE QUEEN": "$170"
+                "TWIN": "81",
+                "FULL / QUEEN": "104",
+                "KING / CALIFORNIA KING": "120",
+                "DELUXE QUEEN": "170"
             },
             "productImages": [
                 "https://content.italic.com/67aaa635-310a-427e-b731-f40eb3d3b856.jpeg?ixlib=react-9.8.0&q=80&w=1600&auto=format&fit=max",
